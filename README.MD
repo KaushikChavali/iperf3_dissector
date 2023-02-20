@@ -1,4 +1,4 @@
-#Iperf3 Dissector for Wireshark
+# Iperf3 Dissector for Wireshark
 
 Wireshark already contains an iperf2 dissector, but in iperf3 some fields have changed order, plus the UDP port.
 <BR>So i made this small LUA file to recognize & dissect iperf3 UDP packets.
@@ -18,3 +18,5 @@ Example:
   
   
   ![alt text](https://github.com/geertn444/iperf3_dissector/blob/master/example.png)
+
+### Additionally adapted for DCCP.
