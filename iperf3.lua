@@ -3,7 +3,7 @@
 -- http://ufpr.dl.sourceforge.net/project/iperf/iperf-2.0.5.tar.gz
 -- https://github.com/dragonxtek/iperf_dissector
 
-iperf_proto = Proto("iperf3","Iperf3 UDP packet")
+iperf_proto = Proto("iperf3","Iperf3 DCCP packet")
 iperf_seq_F = ProtoField.uint32("iperf.id", "Iperf3 sequence")
 iperf_time_F = ProtoField.string("iperf.ts", "Iperf3 TimeStamp")
 iperf_sec_F = ProtoField.uint32("iperf.sec", "Iperf3 sec")
@@ -63,7 +63,7 @@ function iperf_proto.dissector(buffer,pinfo,tree)
 
 Dissector.get("data"):call(buffer(36,buffer:len()-36):tvb(), pinfo, tree)
 end
-DissectorTable.get("udp.port"):add(5201, iperf_proto)
+DissectorTable.get("dccp.port"):add(5201, iperf_proto)
 
 
 
